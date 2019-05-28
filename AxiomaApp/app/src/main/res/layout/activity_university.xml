@@ -5,27 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.UniversityActivity">
 
-    <Button
-        android:id="@+id/btn_login"
+    <TextView
+        android:id="@+id/txt_university_title"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:textSize="20sp"
-        android:text="@string/login"/>
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="@string/university_title"/>
 
-    <Button
-        android:id="@+id/btn_sign_up"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@id/btn_login"
-        android:textSize="20sp"
-        android:text="@string/sign_up"/>
+        android:layout_below="@id/txt_university_title"/>
 
 </RelativeLayout>

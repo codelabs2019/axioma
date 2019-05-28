@@ -5,27 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.SignUpLoginActivity">
 
-    <Button
-        android:id="@+id/btn_login"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="?attr/actionBarSize"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:textSize="20sp"
-        android:text="@string/login"/>
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"/>
 
-    <Button
-        android:id="@+id/btn_sign_up"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@id/btn_login"
-        android:textSize="20sp"
-        android:text="@string/sign_up"/>
+        android:layout_below="@id/tool_bar"/>
 
 </RelativeLayout>

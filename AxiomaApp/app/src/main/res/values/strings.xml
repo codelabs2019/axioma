@@ -1,3 +1,41 @@
 <resources>
-    <string name="app_name">AxiomaApp</string>
+    <string name="app_name">Axioma</string>
+
+    <string name="message_1">Asegura tu ingreso.</string>
+    <string name="message_2">Aprende donde quieras y cuando quieras.</string>
+    <string name="sign_up">CREAR CUENTA</string>
+    <string name="login">INICIAR SESION</string>
+
+    <string name="sign_up_title">Crea tu cuenta en Axioma</string>
+    <string name="forename">Nombre</string>
+    <string name="surname">Apellido</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="sign_up_question">¿Ya tienes una cuenta?</string>
+    <string name="txt_login">INGRESAR</string>
+
+    <string name="login_title">Ingresa con tu cuenta de Axioma</string>
+    <string name="login_question">¿No tienes una cuenta?</string>
+    <string name="txt_sign_up">REGISTRATE</string>
+
+    <string name="ic_close">Cerrar</string>
+
+    <string name="university_title">¿A qué universidad postulas?</string>
+
+    <string name="ic_classes">Clases</string>
+    <string name="ic_exercises">Ejercicios</string>
+    <string name="ic_exams">Simulacros</string>
+    <string name="ic_settings">Cuenta</string>
+
+    <string name="under_construction">En construcción</string>
+
+    <string name="profile">TU PERFIL</string>
+    <string name="email_dialog">Correo</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="current_password">Contraseña actual</string>
+    <string name="new_password">Nueva contraseña</string>
+    <string name="logout_message">¿Estás seguro de que quieres salir?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_classes"
+        android:icon="@drawable/ic_classes"
+        android:title="@string/ic_classes"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/ic_exercises"
+        android:icon="@drawable/ic_exercises"
+        android:title="@string/ic_exercises"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/ic_exams"
+        android:icon="@drawable/ic_exams"
+        android:title="@string/ic_exams"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/ic_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/ic_settings"
+        app:showAsAction="ifRoom"/>
+</menu>
