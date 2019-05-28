@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.cjbensan.axiomaapp.R;
 import com.cjbensan.axiomaapp.adapter.SettingsAdapter;
+import com.cjbensan.axiomaapp.dialog.DeleteDialog;
 import com.cjbensan.axiomaapp.dialog.EmailDialog;
 import com.cjbensan.axiomaapp.dialog.LogoutDialog;
 import com.cjbensan.axiomaapp.dialog.NameDialog;
@@ -52,8 +53,9 @@ public class SettingsFragment extends Fragment {
     private static final String EMAIL = "email";
     private static final String PASSWORD = "password";
     private static final String LOGOUT = "logout";
+    private static final String DELETE = "delete";
 
-    private List<SettingsRow> items = new ArrayList<SettingsRow>();
+    private List<SettingsRow> items = new ArrayList<>();
     private RecyclerView recyclerView;
     private SettingsAdapter adapter;
 
@@ -89,6 +91,14 @@ public class SettingsFragment extends Fragment {
                         break;
                     case LOGOUT:
                         dialog = new LogoutDialog();
+                        break;
+                    case DELETE:
+                        dialog = new DeleteDialog();
+                        args.putString("STUDENT_ID",
+                                SharedPreferencesManager
+                                        .getInstance(getActivity())
+                                        .getStudent()
+                                        .getId());
                         break;
                 }
 
@@ -134,6 +144,7 @@ public class SettingsFragment extends Fragment {
         items.add(new SettingsRow(EMAIL, "Correo", student.getEmail()));
         items.add(new SettingsRow(PASSWORD, "Contraseña", "********"));
         items.add(new SettingsRow(LOGOUT, "Cerrar sesión", ""));
+        items.add(new SettingsRow(DELETE, "Borrar cuenta", ""));
 
         adapter.notifyDataSetChanged();
 

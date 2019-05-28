@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +43,10 @@ public class SignUpFragment extends Fragment {
     private TextInputEditText passwordInput;
     private Button signUpBtn;
     private TextView loginTxt;
+    private TextInputLayout forenameInputLayout;
+    private TextInputLayout surnameInputLayout;
+    private TextInputLayout emailInputLayout;
+    private TextInputLayout passwordInputLayout;
 
     private View view;
 
@@ -60,6 +65,11 @@ public class SignUpFragment extends Fragment {
         emailInput = (TextInputEditText) view.findViewById(R.id.input_email);
         passwordInput = (TextInputEditText) view.findViewById(R.id.input_password);
 
+        forenameInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_forename);
+        surnameInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_surname);
+        emailInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_email);
+        passwordInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_password);
+
         signUpBtn = (Button) view.findViewById(R.id.btn_sign_up);
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,17 +84,47 @@ public class SignUpFragment extends Fragment {
                 boolean validEmail = ValidateInput.validateEmail(email);
                 boolean validPassword = ValidateInput.validatePassword(password);
 
-                if (!validForename)
-                    forenameInput.setError("Ingrese su nombre.");
+                String errorMessage;
 
-                if (!validSurname)
-                    surnameInput.setError("Ingrese su apellido.");
+                if (!validForename) {
+                    forenameInputLayout.setErrorEnabled(true);
+                    errorMessage = "El formato del nombre no es válido.";
 
-                if (!validEmail)
-                    emailInput.setError("El formato de dirección de correo electrónico no es válido.");
+                    if (forename.isEmpty())
+                        errorMessage = "Ingrese su nombre.";
 
-                if (!validPassword)
-                    passwordInput.setError("La contraseña debe tener al menos 8 caracteres.");
+                    forenameInputLayout.setError(errorMessage);
+                }
+
+                if (!validSurname) {
+                    surnameInputLayout.setErrorEnabled(true);
+                    errorMessage = "El formato del apellido no es válido.";
+
+                    if (surname.isEmpty())
+                        errorMessage = "Ingrese su apellido.";
+
+                    surnameInputLayout.setError(errorMessage);
+                }
+
+                if (!validEmail) {
+                    emailInputLayout.setErrorEnabled(true);
+                    errorMessage = "El formato de dirección de correo electrónico no es válido.";
+
+                    if (email.isEmpty())
+                        errorMessage = "Ingrese su dirección de correo electrónico.";
+
+                    emailInputLayout.setError(errorMessage);
+                }
+
+                if (!validPassword) {
+                    passwordInputLayout.setErrorEnabled(true);
+                    errorMessage = "La contraseña debe tener al menos 8 caracteres.";
+
+                    if (password.isEmpty())
+                        errorMessage = "Ingrese su contraseña.";
+
+                    passwordInputLayout.setError(errorMessage);
+                }
 
                 if (validForename && validSurname && validEmail && validPassword)
                     registerStudent(forename, surname, email, password);
@@ -145,11 +185,11 @@ public class SignUpFragment extends Fragment {
     private void processResponse(JSONObject response) {
         try {
             String state = response.getString("state");
+            String message = null;
 
             switch (state) {
                 case "1":
                     JSONObject obj = response.getJSONObject("student");
-                    String message = null;
 
                     Student student = new Student(
                             obj.getString("id"),

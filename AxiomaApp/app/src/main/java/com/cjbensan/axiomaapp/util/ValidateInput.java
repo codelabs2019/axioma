@@ -1,6 +1,5 @@
 package com.cjbensan.axiomaapp.util;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ValidateInput {
@@ -14,12 +13,10 @@ public class ValidateInput {
     }
 
     public static boolean validateEmail(String email) {
-        Pattern patter =  Pattern.compile(
+        Pattern pattern =  Pattern.compile(
                 "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
-        Matcher matcher = patter.matcher(email);
-        
-        return matcher.matches();
+        return pattern.matcher(email).matches();
     }
 
     public static boolean validatePassword(String password) {

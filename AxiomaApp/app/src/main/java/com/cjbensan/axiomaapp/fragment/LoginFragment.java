@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,13 +41,14 @@ public class LoginFragment extends Fragment {
     private TextInputEditText passwordInput;
     private Button loginBtn;
     private TextView signUpTxt;
+    private TextInputLayout passwordInputLayout;
+    private TextInputLayout emailInputLayout;
 
     private View view;
 
     public LoginFragment() {
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,6 +58,9 @@ public class LoginFragment extends Fragment {
 
         emailInput = (TextInputEditText) view.findViewById(R.id.input_email);
         passwordInput = (TextInputEditText) view.findViewById(R.id.input_password);
+
+        emailInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_email);
+        passwordInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_password);
 
         loginBtn = (Button) view.findViewById(R.id.btn_login);
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -67,11 +72,27 @@ public class LoginFragment extends Fragment {
                 boolean validEmail = ValidateInput.validateEmail(email);
                 boolean validPassword = ValidateInput.validatePassword(password);
 
-                if (!validEmail)
-                    emailInput.setError("Ingrese su dirección de correo electrónico.");
+                String errorMessage;
 
-                if (!validPassword)
-                    passwordInput.setError("Ingrese su contraseña.");
+                if (!validEmail) {
+                    emailInputLayout.setErrorEnabled(true);
+                    errorMessage = "El formato de dirección de correo electrónico no es válido.";
+
+                    if (email.isEmpty())
+                        errorMessage = "Ingrese su dirección de correo electrónico.";
+
+                    emailInputLayout.setError(errorMessage);
+                }
+
+                if (!validPassword) {
+                    passwordInputLayout.setErrorEnabled(true);
+                    errorMessage = "La contraseña debe tener al menos 8 caracteres.";
+
+                    if (password.isEmpty())
+                        errorMessage = "Ingrese su contraseña.";
+
+                    passwordInputLayout.setError(errorMessage);
+                }
 
                 if (validEmail && validPassword)
                     loginStudent(email, password);
