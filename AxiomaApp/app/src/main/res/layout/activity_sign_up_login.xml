@@ -14,7 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:background="@android:color/transparent"
+        android:background="@color/colorWhiteBackground"
         android:elevation="0dp"/>
 
     <FrameLayout

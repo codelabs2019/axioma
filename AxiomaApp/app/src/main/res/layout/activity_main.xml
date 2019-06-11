@@ -5,69 +5,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp"
+    android:paddingBottom="16dp"
+    android:clipToPadding="false"
     android:background="@color/colorBackground"
-    android:padding="16dp"
     tools:context=".activity.MainActivity">
-
-    <ImageView
-        android:id="@+id/img_logo_text"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/logo_axioma"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="140dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@id/img_logo_text"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/logo_robot"/>
-
-    <TextView
-        android:id="@+id/txt_message_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/img_logo_text"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:text="@string/message_1" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_message_1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="4dp"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:text="@string/message_2"/>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:backgroundTint="@android:color/white"
-        android:textColor="@color/colorBtnSignUp"
-        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_white"
+        android:textColor="@color/colorRed"
+        android:textSize="15sp"
         android:text="@string/login"/>
 
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_above="@id/btn_login"
-        android:backgroundTint="@color/colorBtnSignUp"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/button_red"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
         android:text="@string/sign_up"/>
+
+    <TextView
+        android:id="@+id/txt_message_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_sign_up"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:text="@string/message_2"/>
+
+    <TextView
+        android:id="@+id/txt_message_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txt_message_2"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:text="@string/message_1" />
 
 </RelativeLayout>

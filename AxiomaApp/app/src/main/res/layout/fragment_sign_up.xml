@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     android:paddingLeft="32dp"
     android:paddingRight="32dp"
+    android:clipToPadding="false"
+    android:background="@color/colorWhiteBackground"
     tools:context=".fragment.SignUpFragment">
 
-    <TextView
-        android:id="@+id/txt_sign_up_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
+    <ImageView
+        android:id="@+id/img_rocket_red"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
-        android:gravity="center_horizontal"
-        android:textSize="20sp"
-        android:text="@string/sign_up_title" />
+        android:adjustViewBounds="true"
+        android:src="@drawable/rocket_red"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_forename"
@@ -27,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@id/txt_sign_up_title"
+        android:layout_below="@id/img_rocket_red"
         android:layout_marginTop="8dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:theme="@style/TextInputLayoutAppearance">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/input_forename"
@@ -48,7 +48,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/input_layout_forename"
         android:layout_marginTop="8dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:theme="@style/TextInputLayoutAppearance">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/input_surname"
@@ -67,7 +67,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/input_layout_surname"
         android:layout_marginTop="8dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:theme="@style/TextInputLayoutAppearance">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/input_email"
@@ -86,8 +86,9 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/input_layout_email"
         android:layout_marginTop="8dp"
+        android:theme="@style/TextInputLayoutAppearance"
         app:passwordToggleEnabled="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        app:passwordToggleTint="#9E9E9E">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/input_password"
@@ -101,14 +102,14 @@
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/input_layout_password"
-        android:layout_marginTop="16dp"
-        android:textSize="20sp"
-        android:backgroundTint="@color/colorBtnSignUp"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_red"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
         android:text="@string/sign_up"/>
 
     <LinearLayout
@@ -122,6 +123,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorRed"
             android:textSize="16sp"
             android:text="@string/sign_up_question"/>
 
@@ -131,9 +133,9 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="0dp"
+            android:textColor="@color/colorBlue"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/colorBtnSignUp"
             android:text="@string/txt_login"/>
 
     </LinearLayout>
