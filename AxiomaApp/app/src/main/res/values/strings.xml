@@ -20,7 +20,7 @@
 
     <string name="ic_close">Cerrar</string>
 
-    <string name="university_title">¿A qué universidad postulas?</string>
+    <string name="university_title">Elige una universidad</string>
 
     <string name="ic_classes">Clases</string>
     <string name="ic_exercises">Ejercicios</string>
@@ -37,6 +37,4 @@
     <string name="logout_message">¿Estás seguro que quieres salir?</string>
     <string name="delete_message">¿Estás seguro que quieres eliminar tu cuenta?</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

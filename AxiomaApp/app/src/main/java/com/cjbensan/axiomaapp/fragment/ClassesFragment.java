@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 
 import com.cjbensan.axiomaapp.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class ClassesFragment extends Fragment {
 
 
@@ -23,8 +21,10 @@ public class ClassesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_classes, container, false);
+        View view = inflater.inflate(R.layout.fragment_classes, container, false);
+
+
+        return view;
     }
 
 }
