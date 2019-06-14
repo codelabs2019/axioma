@@ -23,6 +23,7 @@
         android:background="@drawable/button_white"
         android:textColor="@color/colorRed"
         android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
         android:textSize="15sp"
         android:text="@string/login"/>
 
@@ -37,6 +38,7 @@
         android:background="@drawable/button_red"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
         android:textSize="15sp"
         android:text="@string/sign_up"/>
 

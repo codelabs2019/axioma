@@ -3,15 +3,18 @@ package com.cjbensan.axiomaapp.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,6 +50,7 @@ public class SignUpFragment extends Fragment {
     private TextInputLayout surnameInputLayout;
     private TextInputLayout emailInputLayout;
     private TextInputLayout passwordInputLayout;
+    private ProgressBar progressBar;
 
     private View view;
 
@@ -60,6 +64,8 @@ public class SignUpFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_sign_up, container, false);
 
+        progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
+
         forenameInput = (TextInputEditText) view.findViewById(R.id.input_forename);
         surnameInput = (TextInputEditText) view.findViewById(R.id.input_surname);
         emailInput = (TextInputEditText) view.findViewById(R.id.input_email);
@@ -69,6 +75,11 @@ public class SignUpFragment extends Fragment {
         surnameInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_surname);
         emailInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_email);
         passwordInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_password);
+
+        setTypefaceToInputLayout(forenameInputLayout, R.font.varela_round);
+        setTypefaceToInputLayout(surnameInputLayout, R.font.varela_round);
+        setTypefaceToInputLayout(emailInputLayout, R.font.varela_round);
+        setTypefaceToInputLayout(passwordInputLayout, R.font.varela_round);
 
         signUpBtn = (Button) view.findViewById(R.id.btn_sign_up);
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -126,8 +137,10 @@ public class SignUpFragment extends Fragment {
                     passwordInputLayout.setError(errorMessage);
                 }
 
-                if (validForename && validSurname && validEmail && validPassword)
+                if (validForename && validSurname && validEmail && validPassword) {
+                    progressBar.setVisibility(View.VISIBLE);
                     registerStudent(forename, surname, email, password);
+                }
             }
         });
 
@@ -169,6 +182,7 @@ public class SignUpFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         processResponse(response);
+                        progressBar.setVisibility(View.GONE);
                     }
                 },
                 new Response.ErrorListener() {
@@ -224,5 +238,11 @@ public class SignUpFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private void setTypefaceToInputLayout(TextInputLayout inputLayout, int fontId) {
+        Typeface typeface = ResourcesCompat.getFont(getActivity(), fontId);
+        inputLayout.setTypeface(typeface);
+        inputLayout.getEditText().setTypeface(typeface);
     }
 }

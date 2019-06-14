@@ -3,15 +3,18 @@ package com.cjbensan.axiomaapp.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +46,7 @@ public class LoginFragment extends Fragment {
     private TextView signUpTxt;
     private TextInputLayout passwordInputLayout;
     private TextInputLayout emailInputLayout;
+    private ProgressBar progressBar;
 
     private View view;
 
@@ -56,11 +60,16 @@ public class LoginFragment extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_login, container, false);
 
+        progressBar = view.findViewById(R.id.progress_bar);
+
         emailInput = (TextInputEditText) view.findViewById(R.id.input_email);
         passwordInput = (TextInputEditText) view.findViewById(R.id.input_password);
 
         emailInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_email);
         passwordInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_password);
+
+        setTypefaceToInputLayout(emailInputLayout, R.font.varela_round);
+        setTypefaceToInputLayout(passwordInputLayout, R.font.varela_round);
 
         loginBtn = (Button) view.findViewById(R.id.btn_login);
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -94,8 +103,10 @@ public class LoginFragment extends Fragment {
                     passwordInputLayout.setError(errorMessage);
                 }
 
-                if (validEmail && validPassword)
+                if (validEmail && validPassword) {
+                    progressBar.setVisibility(View.VISIBLE);
                     loginStudent(email, password);
+                }
             }
         });
 
@@ -135,6 +146,7 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         processResponse(response);
+                        progressBar.setVisibility(View.GONE);
                     }
                 },
                 new Response.ErrorListener() {
@@ -183,5 +195,11 @@ public class LoginFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private void setTypefaceToInputLayout(TextInputLayout inputLayout, int fontId) {
+        Typeface typeface = ResourcesCompat.getFont(getActivity(), fontId);
+        inputLayout.setTypeface(typeface);
+        inputLayout.getEditText().setTypeface(typeface);
     }
 }

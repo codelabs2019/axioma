@@ -10,7 +10,7 @@
     <color name="colorRed">#F44336</color>
     <color name="colorWhite">#FAFAFA</color>
     <color name="colorBlue">#2196F3</color>
-    <color name="colorWhiteBackground">#F5F5F5</color>
+    <color name="colorWhiteBackground">#EEEEEE</color>
     <color name="colorRedButtonPressed">#D32F2F</color>
     <color name="colorWhiteButtonPressed">#E0E0E0</color>
 </resources>

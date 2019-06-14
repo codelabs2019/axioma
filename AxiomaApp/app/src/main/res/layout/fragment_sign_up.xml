@@ -21,43 +21,53 @@
         android:adjustViewBounds="true"
         android:src="@drawable/rocket_red"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_forename"
+    <LinearLayout
+        android:id="@+id/layout_fullname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/img_rocket_red"
         android:layout_marginTop="8dp"
-        android:theme="@style/TextInputLayoutAppearance">
+        android:orientation="horizontal">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/input_forename"
-            android:layout_width="match_parent"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_forename"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/forename"/>
+            android:layout_weight="1"
+            android:paddingStart="0dp"
+            android:paddingEnd="8dp"
+            android:theme="@style/TextInputLayoutAppearance">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/input_forename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/forename"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout_surname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/input_layout_forename"
-        android:layout_marginTop="8dp"
-        android:theme="@style/TextInputLayoutAppearance">
+        </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/input_surname"
-            android:layout_width="match_parent"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_surname"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="@string/surname"/>
+            android:layout_weight="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="0dp"
+            android:theme="@style/TextInputLayoutAppearance">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/input_surname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="@string/surname"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_email"
@@ -65,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@id/input_layout_surname"
+        android:layout_below="@id/layout_fullname"
         android:layout_marginTop="8dp"
         android:theme="@style/TextInputLayoutAppearance">
 
@@ -110,10 +120,12 @@
         android:background="@drawable/button_red"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/varela_round"
+        android:textStyle="bold"
         android:textSize="15sp"
         android:text="@string/sign_up"/>
 
     <LinearLayout
+        android:id="@+id/linear_layout_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_sign_up"
@@ -142,5 +154,16 @@
             android:text="@string/txt_login"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/linear_layout_2"
+        android:layout_marginTop="32dp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/colorRed"/>
 
 </RelativeLayout>
