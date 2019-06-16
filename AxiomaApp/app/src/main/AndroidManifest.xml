@@ -13,8 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.UserSessionActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/StatusBarRed"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.UniversityActivity"
             android:screenOrientation="portrait"

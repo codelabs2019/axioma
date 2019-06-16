@@ -10,6 +10,9 @@
         android:id="@+id/input_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"/>
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/varela_round"
+        android:textColor="#424242"
+        android:backgroundTint="@color/colorRed"/>
 
 </LinearLayout>

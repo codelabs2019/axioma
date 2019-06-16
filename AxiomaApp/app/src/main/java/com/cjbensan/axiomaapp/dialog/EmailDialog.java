@@ -29,6 +29,7 @@ public class EmailDialog extends SettingsDialog {
 
         final EditText input = (EditText) dialog.findViewById(R.id.input_email);
         input.setText(value);
+        input.setSelection(value.length());
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(dialog)
