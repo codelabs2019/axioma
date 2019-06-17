@@ -14,8 +14,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="?attr/colorPrimary"
-        app:itemBackground="?attr/colorPrimary"
+        android:background="@color/colorRed"
+        app:itemBackground="@color/colorRed"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
         app:menu="@menu/bottom_nav_actions"/>

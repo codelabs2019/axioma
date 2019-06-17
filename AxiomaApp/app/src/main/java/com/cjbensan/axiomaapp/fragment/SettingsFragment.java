@@ -158,6 +158,8 @@ public class SettingsFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        String password = SharedPreferencesManager.getInstance(getActivity()).getStudent().getPassword();
+
         if (requestCode == DIALOG_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data.getExtras().containsKey(FORENAME)) {
@@ -172,6 +174,11 @@ public class SettingsFragment extends Fragment {
                     items.get(2).setValue(data.getExtras().getString(EMAIL));
                     adapter.notifyItemChanged(2);
                 }
+                else if (data.getExtras().containsKey(PASSWORD)) {
+                    /*items.get(3).setValue(data.getExtras().getString(PASSWORD));
+                    adapter.notifyItemChanged(3);*/
+                    password = data.getExtras().getString(PASSWORD);
+                }
             }
         }
 
@@ -180,7 +187,7 @@ public class SettingsFragment extends Fragment {
                 items.get(0).getValue(),
                 items.get(1).getValue(),
                 items.get(2).getValue(),
-                SharedPreferencesManager.getInstance(getActivity()).getStudent().getPassword()
+                password
         );
 
         updateStudent(student);
