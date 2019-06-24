@@ -16,12 +16,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.UniversityActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/StatusBarRed"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SignUpLoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/StatusBarRed"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait"

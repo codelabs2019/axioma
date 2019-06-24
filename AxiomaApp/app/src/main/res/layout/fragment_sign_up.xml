@@ -117,7 +117,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/input_layout_password"
         android:layout_marginTop="32dp"
-        android:background="@drawable/button_red"
+        android:background="@drawable/button_indigo"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/varela_round"
         android:textStyle="bold"
@@ -136,7 +136,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorRed"
+            android:textColor="@color/colorIndigo"
             android:fontFamily="@font/varela_round"
             android:textSize="16sp"
             android:text="@string/sign_up_question"/>
@@ -147,7 +147,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="0dp"
-            android:textColor="@color/colorBlue"
+            android:textColor="@color/colorRed"
             android:fontFamily="@font/varela_round"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -164,6 +164,6 @@
         android:layout_below="@id/linear_layout_2"
         android:layout_marginTop="32dp"
         android:visibility="gone"
-        android:indeterminateTint="@color/colorRed"/>
+        android:indeterminateTint="@color/colorIndigo"/>
 
 </RelativeLayout>

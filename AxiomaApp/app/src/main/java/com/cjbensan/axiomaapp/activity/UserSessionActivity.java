@@ -1,6 +1,5 @@
 package com.cjbensan.axiomaapp.activity;
 
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.res.ResourcesCompat;
@@ -32,7 +31,8 @@ public class UserSessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_session);
 
-        getWindow().setStatusBarColor(ResourcesCompat.getColor(getResources(), R.color.colorRed, null));
+        getWindow().setStatusBarColor(ResourcesCompat.getColor(
+                getResources(), R.color.colorIndigo, null));
 
         setupViewPager();
         setupBottomNavigation();

@@ -1,6 +1,7 @@
 package com.cjbensan.axiomaapp.activity;
 
 
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,6 +79,9 @@ public class UniversityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_university);
+
+        getWindow().setStatusBarColor(ResourcesCompat.getColor(
+                getResources(), R.color.colorIndigo, null));
 
         final CardPagerAdapter adapter = new CardPagerAdapter(getSupportFragmentManager());
 

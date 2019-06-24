@@ -1,6 +1,7 @@
 package com.cjbensan.axiomaapp.activity;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +19,9 @@ public class SignUpLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_login);
 
+        getWindow().setStatusBarColor(ResourcesCompat.getColor(
+                getResources(), R.color.colorIndigo, null));
+
         setupActionBar();
         setupFragment();
     }
@@ -29,13 +33,21 @@ public class SignUpLoginActivity extends AppCompatActivity {
     }
 
     private void setupFragment() {
-        int fragment = getIntent().getIntExtra(MainActivity.FRAGMENT, 0);
+        int fragmentCode = getIntent().getIntExtra(MainActivity.FRAGMENT, 0);
+        Fragment fragment = null;
 
-        Fragment[] fragments = { new SignUpFragment(), new LoginFragment() };
+        switch (fragmentCode) {
+            case MainActivity.SIGN_UP_FRAGMENT:
+                fragment = new SignUpFragment();
+                break;
+            case MainActivity.LOGIN_FRAGMENT:
+                fragment = new LoginFragment();
+                break;
+        }
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, fragments[fragment])
+                .add(R.id.fragment_container, fragment)
                 .commit();
     }
 

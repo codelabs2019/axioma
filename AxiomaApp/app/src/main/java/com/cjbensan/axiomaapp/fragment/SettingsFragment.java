@@ -48,12 +48,12 @@ public class SettingsFragment extends Fragment {
 
     public static final int DIALOG_REQUEST_CODE = 1;
 
-    private static final String FORENAME = "forename";
-    private static final String SURNAME = "surname";
-    private static final String EMAIL = "email";
-    private static final String PASSWORD = "password";
-    private static final String LOGOUT = "logout";
-    private static final String DELETE = "delete";
+    public static final String FORENAME = "forename";
+    public static final String SURNAME = "surname";
+    public static final String EMAIL = "email";
+    public static final String PASSWORD = "password";
+    public static final String LOGOUT = "logout";
+    public static final String DELETE = "delete";
 
     private List<SettingsRow> items = new ArrayList<>();
     private RecyclerView recyclerView;

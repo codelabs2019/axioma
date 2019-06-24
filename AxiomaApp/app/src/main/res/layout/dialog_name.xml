@@ -13,6 +13,7 @@
         android:inputType="textPersonName"
         android:fontFamily="@font/varela_round"
         android:textColor="#424242"
-        android:backgroundTint="@color/colorRed"/>
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:backgroundTint="@color/colorIndigo"/>
 
 </LinearLayout>
