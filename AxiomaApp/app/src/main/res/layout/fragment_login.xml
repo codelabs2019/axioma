@@ -7,7 +7,7 @@
     android:paddingLeft="32dp"
     android:paddingRight="32dp"
     android:clipToPadding="false"
-    android:background="@color/colorWhiteBackground"
+    android:background="@android:color/white"
     tools:context=".fragment.LoginFragment">
 
     <ImageView

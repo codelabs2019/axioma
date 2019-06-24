@@ -7,7 +7,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?selectableItemBackground"
-    android:background="#EEEEEE"
+    android:background="@android:color/white"
     android:orientation="horizontal">
 
     <TextView

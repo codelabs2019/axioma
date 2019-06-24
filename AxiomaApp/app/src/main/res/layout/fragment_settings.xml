@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:elevation="6dp"
+        android:elevation="4dp"
         android:background="@drawable/bg_user_photo">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -34,6 +34,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/fl_user_photo"
-        android:background="#EEEEEE"/>
+        android:background="@android:color/white"/>
 
 </RelativeLayout>

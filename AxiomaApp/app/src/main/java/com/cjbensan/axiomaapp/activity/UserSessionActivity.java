@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.cjbensan.axiomaapp.R;
 import com.cjbensan.axiomaapp.adapter.UserSessionAdapter;
-import com.cjbensan.axiomaapp.fragment.ClassesFragment;
+import com.cjbensan.axiomaapp.fragment.CoursesFragment;
 import com.cjbensan.axiomaapp.fragment.ExamsFragment;
 import com.cjbensan.axiomaapp.fragment.ExercisesFragment;
 import com.cjbensan.axiomaapp.fragment.SettingsFragment;
@@ -68,7 +68,7 @@ public class UserSessionActivity extends AppCompatActivity {
 
     private void setupViewPager() {
         UserSessionAdapter adapter = new UserSessionAdapter(getSupportFragmentManager());
-        adapter.addFragment(new ClassesFragment());
+        adapter.addFragment(new CoursesFragment());
         adapter.addFragment(new ExercisesFragment());
         adapter.addFragment(new ExamsFragment());
         adapter.addFragment(new SettingsFragment());
