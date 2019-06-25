@@ -81,6 +81,7 @@ public class CoursesFragment extends Fragment {
             @Override
             public void onItemClick(Course item) {
                 Intent intent = new Intent(getContext(), TopicsActivity.class);
+                intent.putExtra("THUMBNAIL", item.getThumbnail());
                 intent.putExtra("NAME", item.getName());
                 startActivity(intent);
             }
@@ -116,7 +117,7 @@ public class CoursesFragment extends Fragment {
         RecyclerView.LayoutManager manager =
                 new LinearLayoutManager(getActivity().getApplicationContext());
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_courses);
         recyclerView.setLayoutManager(manager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);

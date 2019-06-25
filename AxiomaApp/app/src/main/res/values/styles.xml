@@ -28,4 +28,16 @@
         <item name="android:textColorPrimary">@android:color/black</item>
     </style>
 
+    <style name="ExpandedAppBar" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CollapsedAppBar" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

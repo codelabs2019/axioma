@@ -6,48 +6,45 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cjbensan.axiomaapp.R;
-import com.cjbensan.axiomaapp.domain.Course;
+import com.cjbensan.axiomaapp.domain.Topic;
 
 import java.util.List;
 
-public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHolder> {
+public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHolder> {
 
-    private final List<Course> items;
+    private final List<Topic> items;
     private final OnItemClickListener listener;
 
-    public CourseAdapter(List<Course> items, OnItemClickListener listener) {
+    public TopicAdapter(List<Topic> items, OnItemClickListener listener) {
         this.items = items;
         this.listener = listener;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        private ImageView thumbnail;
+    public class TopicViewHolder extends RecyclerView.ViewHolder {
+        private TextView number;
         private TextView name;
-        private TextView teacher;
         private TextView classes;
         private TextView exercises;
 
-        public MyViewHolder(View view) {
+        public TopicViewHolder(View view) {
             super(view);
-            thumbnail = (ImageView) view.findViewById(R.id.img_thumbnail);
+
+            number = (TextView) view.findViewById(R.id.txt_number);
             name = (TextView) view.findViewById(R.id.txt_name);
-            teacher = (TextView) view.findViewById(R.id.txt_teacher);
             classes = (TextView) view.findViewById(R.id.txt_classes);
             exercises = (TextView) view.findViewById(R.id.txt_exercises);
         }
 
-        public void bind(final Course item, final OnItemClickListener listener) {
-            thumbnail.setImageResource(item.getThumbnail());
+        public void bind(final Topic item, final OnItemClickListener listener) {
+            number.setText(item.getNumber());
             name.setText(item.getName());
-            teacher.setText(item.getTeacher());
-            classes.setText(item.getClasses());
-            exercises.setText(item.getExercises());
+            classes.setText(String.format("%s clases", item.getClasses()));
+            exercises.setText(String.format("%s ejercicios", item.getExercises()));
 
-            CardView cardView = itemView.findViewById(R.id.card_view_course);
+            CardView cardView = itemView.findViewById(R.id.card_view_topic);
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -55,25 +52,25 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.MyViewHold
                 }
             });
         }
+
     }
 
-
     public interface OnItemClickListener {
-        void onItemClick(Course item);
+        void onItemClick(Topic item);
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public TopicViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.card_view_course, viewGroup, false);
+                .inflate(R.layout.card_view_topic, viewGroup, false);
 
-        return new MyViewHolder(itemView);
+        return new TopicViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        myViewHolder.bind(items.get(i), listener);
+    public void onBindViewHolder(@NonNull TopicViewHolder topicViewHolder, int i) {
+        topicViewHolder.bind(items.get(i), listener);
     }
 
     @Override
