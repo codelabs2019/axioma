@@ -1,6 +1,7 @@
 package com.cjbensan.axiomaapp.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cjbensan.axiomaapp.R;
+import com.cjbensan.axiomaapp.activity.TopicExerciseActivity;
 import com.cjbensan.axiomaapp.adapter.CourseExerciseAdapter;
 import com.cjbensan.axiomaapp.domain.CourseExercise;
 
@@ -62,7 +64,8 @@ public class ExercisesFragment extends Fragment {
         adapter = new CourseExerciseAdapter(items, new CourseExerciseAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(CourseExercise item) {
-
+                Intent intent = new Intent(getContext(), TopicExerciseActivity.class);
+                startActivity(intent);
             }
         });
 

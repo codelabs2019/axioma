@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity.TopicExerciseActivity"
+            android:parentActivityName=".activity.UserSessionActivity"></activity>
+        <activity
             android:name=".activity.TopicsActivity"
-            android:parentActivityName=".activity.UserSessionActivity">
-
-        </activity>
+            android:parentActivityName=".activity.UserSessionActivity"></activity>
         <activity
             android:name=".activity.UserSessionActivity"
             android:screenOrientation="portrait" />
@@ -28,7 +29,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/StatusBarTransparent"></activity>
+            android:theme="@style/StatusBarTransparent" />
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
