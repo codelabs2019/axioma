@@ -63,6 +63,7 @@ public class LoginFragment extends Fragment {
         progressBar = view.findViewById(R.id.progress_bar);
 
         emailInput = (TextInputEditText) view.findViewById(R.id.input_email);
+        emailInput.requestFocus();
         passwordInput = (TextInputEditText) view.findViewById(R.id.input_password);
 
         emailInputLayout = (TextInputLayout) view.findViewById(R.id.input_layout_email);

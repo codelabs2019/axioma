@@ -67,6 +67,7 @@ public class SignUpFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
 
         forenameInput = (TextInputEditText) view.findViewById(R.id.input_forename);
+        forenameInput.requestFocus();
         surnameInput = (TextInputEditText) view.findViewById(R.id.input_surname);
         emailInput = (TextInputEditText) view.findViewById(R.id.input_email);
         passwordInput = (TextInputEditText) view.findViewById(R.id.input_password);

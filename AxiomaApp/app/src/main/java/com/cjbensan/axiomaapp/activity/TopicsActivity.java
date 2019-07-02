@@ -76,7 +76,8 @@ public class TopicsActivity extends AppCompatActivity {
         adapter = new TopicAdapter(items, new TopicAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Topic item) {
-
+                Intent intent = new Intent(TopicsActivity.this, ClassesActivity.class);
+                startActivity(intent);
             }
         });
 

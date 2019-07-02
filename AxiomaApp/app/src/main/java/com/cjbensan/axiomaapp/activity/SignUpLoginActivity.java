@@ -1,7 +1,6 @@
 package com.cjbensan.axiomaapp.activity;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -19,11 +18,8 @@ public class SignUpLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_login);
 
-        getWindow().setStatusBarColor(ResourcesCompat.getColor(
-                getResources(), R.color.colorIndigo, null));
-
-        setupActionBar();
         setupFragment();
+        setupActionBar();
     }
 
     private void setupActionBar() {

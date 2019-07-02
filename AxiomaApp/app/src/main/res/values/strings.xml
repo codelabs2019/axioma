@@ -7,8 +7,8 @@
     <string name="login">INICIAR SESION</string>
 
     <string name="sign_up_title">Crea tu cuenta en Axioma</string>
-    <string name="forename">Nombres</string>
-    <string name="surname">Apellidos</string>
+    <string name="forename">Nombre</string>
+    <string name="surname">Apellido</string>
     <string name="email">Correo electrónico</string>
     <string name="password">Contraseña</string>
     <string name="sign_up_question">¿Ya tienes una cuenta?</string>
@@ -36,5 +36,11 @@
     <string name="new_password">Nueva contraseña</string>
     <string name="logout_message">¿Estás seguro que quieres salir?</string>
     <string name="delete_message">¿Estás seguro que quieres eliminar tu cuenta?</string>
+
+    <string name="previous">ANTERIOR</string>
+    <string name="next">SIGUIENTE</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

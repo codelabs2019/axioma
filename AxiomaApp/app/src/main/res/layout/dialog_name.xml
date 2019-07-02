@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:fontFamily="@font/varela_round"
-        android:textColor="#424242"
+        android:textColor="@color/colorPrimaryText"
         android:textCursorDrawable="@drawable/color_cursor"
-        android:backgroundTint="@color/colorIndigo"/>
+        android:backgroundTint="@color/colorPrimary"/>
 
 </LinearLayout>

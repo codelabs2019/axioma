@@ -12,11 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activity.ClassesActivity"
+            android:screenOrientation="user"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <activity
             android:name=".activity.TopicExerciseActivity"
-            android:parentActivityName=".activity.UserSessionActivity"></activity>
+            android:parentActivityName=".activity.UserSessionActivity" />
         <activity
             android:name=".activity.TopicsActivity"
-            android:parentActivityName=".activity.UserSessionActivity"></activity>
+            android:parentActivityName=".activity.UserSessionActivity" />
         <activity
             android:name=".activity.UserSessionActivity"
             android:screenOrientation="portrait" />

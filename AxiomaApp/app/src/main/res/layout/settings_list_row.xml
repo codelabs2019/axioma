@@ -17,7 +17,7 @@
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:fontFamily="@font/varela_round"
-        android:textColor="@color/colorDarkText"
+        android:textColor="@color/colorPrimaryText"
         android:textSize="16sp"/>
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_weight="2"
         android:gravity="center_vertical"
         android:fontFamily="@font/varela_round"
-        android:textColor="@color/colorLightText"
+        android:textColor="@color/colorSecondaryText"
         android:textSize="15sp"/>
 
 </LinearLayout>

@@ -1,9 +1,6 @@
 package com.cjbensan.axiomaapp.adapter;
 
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +36,10 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
         public void bind(final SettingsRow item, final OnItemClickListener listener) {
             label.setText(item.getLabel());
             value.setText(item.getValue());
+
+            if (item.getId().equals(SettingsFragment.DELETE)) {
+                label.setTextColor(0xFFFF5252);
+            }
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

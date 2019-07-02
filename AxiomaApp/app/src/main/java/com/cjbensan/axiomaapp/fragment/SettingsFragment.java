@@ -138,15 +138,15 @@ public class SettingsFragment extends Fragment {
     private void setupSettingsData() {
         Student student = SharedPreferencesManager.getInstance(getActivity()).getStudent();
 
-        String password = "";
+        StringBuilder dots = new StringBuilder();
         for (int i = 0; i < 8; i++) {
-            password += "\u2022";
+            dots.append("\u2022");
         }
 
         items.add(new SettingsRow(FORENAME, "Nombre", student.getForename()));
         items.add(new SettingsRow(SURNAME, "Apellido", student.getSurname()));
         items.add(new SettingsRow(EMAIL, "Correo", student.getEmail()));
-        items.add(new SettingsRow(PASSWORD, "Contraseña", password));
+        items.add(new SettingsRow(PASSWORD, "Contraseña", dots.toString()));
         items.add(new SettingsRow(LOGOUT, "Cerrar sesión", ""));
         items.add(new SettingsRow(DELETE, "Borrar cuenta", ""));
 

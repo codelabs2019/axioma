@@ -19,26 +19,30 @@ public class SettingsDialog extends DialogFragment {
     public void onStart() {
         super.onStart();
 
-        /*int colorRed = ResourcesCompat.getColor(getResources(), R.color.colorRed, null);*/
-
         AlertDialog dialogObject = (AlertDialog) getDialog();
         int titleId = getResources().getIdentifier( "alertTitle", "id", "android" );
         if (titleId > 0) {
             TextView dialogTitle = (TextView) dialogObject.findViewById(titleId);
             if (dialogTitle != null) {
-                dialogTitle.setTextColor(0xFF424242);
-                dialogTitle.setTypeface(ResourcesCompat.getFont(getActivity(), R.font.varela_round), Typeface.BOLD);
+                dialogTitle.setTextColor(ResourcesCompat.getColor(
+                        getResources(), R.color.colorPrimaryText, null));
+                dialogTitle.setTypeface(ResourcesCompat.getFont(
+                        getActivity(), R.font.varela_round), Typeface.BOLD);
             }
         }
 
         Button positive = ((AlertDialog) getDialog()).getButton(AlertDialog.BUTTON_POSITIVE);
         positive.setTextSize(16.0f);
-        positive.setTypeface(ResourcesCompat.getFont(getActivity(), R.font.varela_round), Typeface.BOLD);
-                positive.setTextColor(0xFF424242);
+        positive.setTypeface(ResourcesCompat.getFont(
+                getActivity(), R.font.varela_round), Typeface.BOLD);
+        positive.setTextColor(ResourcesCompat.getColor(
+                        getResources(), R.color.colorPrimary, null));
 
         Button negative = ((AlertDialog) getDialog()).getButton(AlertDialog.BUTTON_NEGATIVE);
         negative.setTextSize(16.0f);
-        negative.setTypeface(ResourcesCompat.getFont(getActivity(), R.font.varela_round), Typeface.BOLD);
-        negative.setTextColor(0xFF424242);
+        negative.setTypeface(ResourcesCompat.getFont(
+                getActivity(), R.font.varela_round), Typeface.BOLD);
+        negative.setTextColor(ResourcesCompat.getColor(
+                getResources(), R.color.colorPrimary, null));
     }
 }
