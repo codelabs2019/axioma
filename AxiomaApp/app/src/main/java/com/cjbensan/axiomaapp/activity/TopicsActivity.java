@@ -49,9 +49,6 @@ public class TopicsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topics);
 
-        getWindow().setStatusBarColor(ResourcesCompat.getColor(
-                getResources(), R.color.colorIndigo, null));
-
         Intent intent = getIntent();
         int thumbnailCourse = intent.getIntExtra("THUMBNAIL", 0);
         String nameCourse = intent.getStringExtra("NAME");
@@ -77,6 +74,7 @@ public class TopicsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(Topic item) {
                 Intent intent = new Intent(TopicsActivity.this, ClassesActivity.class);
+                intent.putExtra("TOPIC_NAME", item.getName());
                 startActivity(intent);
             }
         });

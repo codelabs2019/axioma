@@ -47,7 +47,7 @@
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:fontFamily="@font/varela_round"
-                android:textColor="@color/colorDarkText"
+                android:textColor="@color/colorPrimaryText"
                 android:textSize="14sp"
                 android:text="Binomio de Newton y cocientes notables"/>
 
@@ -68,7 +68,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:background="@color/colorIndigo"/>
+                android:background="@color/colorPrimary"/>
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

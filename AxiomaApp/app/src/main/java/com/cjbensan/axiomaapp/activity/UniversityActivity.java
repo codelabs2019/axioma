@@ -80,9 +80,6 @@ public class UniversityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_university);
 
-        getWindow().setStatusBarColor(ResourcesCompat.getColor(
-                getResources(), R.color.colorIndigo, null));
-
         final CardPagerAdapter adapter = new CardPagerAdapter(getSupportFragmentManager());
 
         for (int i = 0; i < thumbnails.length; i++) {

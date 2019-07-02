@@ -59,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/varela_round"
-                    android:textColor="@color/colorDarkText"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="15sp"
                     android:text="Binomio de Newton y cocientes notables"/>
 
@@ -82,7 +82,7 @@
                         android:layout_marginStart="8dp"
                         android:gravity="bottom"
                         android:fontFamily="@font/varela_round"
-                        android:textColor="@color/colorLightText"
+                        android:textColor="@color/colorSecondaryText"
                         android:textSize="13sp"
                         android:text="5 clases"/>
 
@@ -101,7 +101,7 @@
                         android:layout_marginStart="8dp"
                         android:gravity="bottom"
                         android:fontFamily="@font/varela_round"
-                        android:textColor="@color/colorLightText"
+                        android:textColor="@color/colorSecondaryText"
                         android:textSize="13sp"
                         android:text="10 ejercicios"/>
 
@@ -116,7 +116,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:background="@color/colorIndigo"/>
+                android:background="@color/colorPrimary"/>
 
         </RelativeLayout>
 

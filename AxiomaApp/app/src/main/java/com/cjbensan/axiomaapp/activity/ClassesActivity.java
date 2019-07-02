@@ -1,7 +1,9 @@
 package com.cjbensan.axiomaapp.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +54,12 @@ public class ClassesActivity extends AppCompatActivity implements View.OnClickLi
         setupToolbar();
         setupBottomNavigationBar();
         setupClassCounterTextView();
+
+        Intent intent = getIntent();
+        String topicName = intent.getStringExtra("TOPIC_NAME");
+        View view = navigationView.getHeaderView(0);
+        TextView headerNavViewTxt = (TextView) view.findViewById(R.id.txt_header_navigation_view);
+        headerNavViewTxt.setText(topicName);
     }
 
     private void setupNavigationView() {
@@ -100,6 +108,8 @@ public class ClassesActivity extends AppCompatActivity implements View.OnClickLi
 
     private void setupToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar_classes);
+        toolbar.setBackgroundColor(ResourcesCompat.getColor(getResources(), android.R.color.white, null));
+        toolbar.setTitleTextAppearance(this, R.style.ClasseAppBar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_nav_menu);

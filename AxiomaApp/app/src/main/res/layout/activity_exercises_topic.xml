@@ -14,7 +14,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#5C6BC0"/>
+        android:backgroundTint="@android:color/white"
+        android:elevation="0dp"
+        android:background="@color/colorPrimary"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_topic_exercises"
