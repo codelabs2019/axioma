@@ -1,6 +1,7 @@
 <?php
     require_once 'mysql_login.php';
 
+
     class Database {
         private static $db = null;
         private static $pdo;

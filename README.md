@@ -1,2 +1,2 @@
 # Axioma
-Proyecto "Axioma APP", para el curso Desarrollo de Aplicaciones Móviles / UTP - Marzo 2019
+Proyecto "Axioma APP", para el curso Desarrollo de Aplicaciones Móviles Empresariales Android / UTP - Agosto 2019
